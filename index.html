@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Museum of Ancient Art — a moonlit gallery where marble, myth and reflection meet." />
+    <title>Museum of Ancient Art</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Loading overlay -->
+    <div class="loader">
+        <div class="loader__inner">
+            <span class="loader__eyebrow">Museum of Ancient Art</span>
+            <div class="loader__bar"><span class="loader__bar-fill"></span></div>
+            <span class="loader__percent">0%</span>
+        </div>
+    </div>
+
+    <!-- Fixed 3D stage -->
+    <canvas class="webgl"></canvas>
+    <div class="vignette-overlay"></div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <a href="#hero" class="brand">
+            <span class="brand__mark">◈</span>
+            <span class="brand__text">Museum<em>of Ancient Art</em></span>
+        </a>
+        <nav class="nav">
+            <a href="#hero" class="nav__link">Home</a>
+            <a href="#collection" class="nav__link">Collection</a>
+            <a href="#masterpieces" class="nav__link">Gallery</a>
+            <a href="#events" class="nav__link">Events</a>
+            <a href="#visit" class="nav__link">Visit</a>
+        </nav>
+        <div class="header__actions">
+            <button class="icon-btn" aria-label="Search">⌕</button>
+            <a href="#membership" class="btn btn--ghost">Book tickets</a>
+        </div>
+    </header>
+
+    <!-- Side progress rail -->
+    <aside class="progress-rail" aria-hidden="true">
+        <span class="progress-rail__track"><span class="progress-rail__fill"></span></span>
+        <span class="progress-rail__label">Scroll</span>
+    </aside>
+
+    <main>
+        <!-- ============ CINEMATIC ZONE (3D camera tour) ============ -->
+        <div class="cinematic">
+            <!-- HERO -->
+            <section id="hero" class="section section--hero">
+                <div class="hero">
+                    <span class="hero__eyebrow">Est. Antiquity · Moonlit Gallery</span>
+                    <h1 class="hero__title">
+                        <span>Museum</span>
+                        <span>of Ancient</span>
+                        <span><em>Art</em></span>
+                    </h1>
+                    <p class="hero__lead">
+                        Where marble breathes and myth reflects on still water. Step into a
+                        moonlit sanctuary and witness the goddess Flora rendered in light,
+                        mist and silence.
+                    </p>
+                    <div class="hero__cta">
+                        <a href="#collection" class="btn btn--gold">Enter the gallery →</a>
+                        <a href="#visit" class="btn btn--ghost">Plan your visit</a>
+                    </div>
+                    <div class="hero__scroll">
+                        <span class="hero__scroll-dot"></span>
+                        Scroll to explore
+                    </div>
+                </div>
+            </section>
+
+            <!-- MANIFESTO -->
+            <section id="manifesto" class="section section--center">
+                <blockquote class="manifesto reveal">
+                    <span class="manifesto__mark">“</span>
+                    <p class="manifesto__text">
+                        Art is the closest thing we have to touching eternity —
+                        <em>a whisper from the ancients, carried on moonlight.</em>
+                    </p>
+                    <span class="manifesto__cite">— The Curator's Note</span>
+                </blockquote>
+            </section>
+
+            <!-- COLLECTION -->
+            <section id="collection" class="section section--left">
+                <div class="panel reveal">
+                    <span class="panel__index">01 — The Collection</span>
+                    <h2 class="panel__title">Relics carved from moonlight</h2>
+                    <p class="panel__text">
+                        A curated assembly of classical sculpture, each piece lit as it was
+                        meant to be seen — from below, in the hush of night, its silhouette
+                        doubled upon reflecting water.
+                    </p>
+                    <div class="cards" data-stagger>
+                        <article class="card">
+                            <span class="card__num">I</span>
+                            <h3>Marble &amp; Myth</h3>
+                            <p>Goddesses and heroes preserved in luminous stone.</p>
+                        </article>
+                        <article class="card">
+                            <span class="card__num">II</span>
+                            <h3>Bronze Reflections</h3>
+                            <p>Patinated forms mirrored across the still pool.</p>
+                        </article>
+                        <article class="card">
+                            <span class="card__num">III</span>
+                            <h3>Sacred Geometry</h3>
+                            <p>Halos of light framing the divine proportion.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROVENANCE -->
+            <section id="provenance" class="section section--right">
+                <div class="panel reveal">
+                    <span class="panel__index">02 — Provenance</span>
+                    <h2 class="panel__title">Flora, goddess of spring</h2>
+                    <p class="panel__text">
+                        Unearthed and restored to her full grace, Flora stands upon a plinth
+                        of black marble crowned in gold. Her gaze, caught in silver
+                        moonlight, has watched over gardens for two thousand years.
+                    </p>
+                    <div class="stats" data-stagger>
+                        <div class="stat">
+                            <span class="stat__value">1st c.</span>
+                            <span class="stat__label">Origin</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat__value">Marble</span>
+                            <span class="stat__label">Medium</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat__value">3.4 m</span>
+                            <span class="stat__label">Height</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- EVENTS -->
+            <section id="events" class="section section--left">
+                <div class="panel reveal">
+                    <span class="panel__index">03 — Exhibitions &amp; Events</span>
+                    <h2 class="panel__title">After-dark encounters</h2>
+                    <ul class="event-list" data-stagger>
+                        <li class="event">
+                            <span class="event__date">Fri · 20:00</span>
+                            <span class="event__name">Moonlight &amp; Marble — a guided nocturne</span>
+                            <span class="event__tag">Members</span>
+                        </li>
+                        <li class="event">
+                            <span class="event__date">Sat · 19:30</span>
+                            <span class="event__name">Reflections: light, water &amp; myth</span>
+                            <span class="event__tag">Talk</span>
+                        </li>
+                        <li class="event">
+                            <span class="event__date">Sun · 18:00</span>
+                            <span class="event__name">The Restoration of Flora</span>
+                            <span class="event__tag">Film</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- VISIT (still over the 3D) -->
+            <section id="visit" class="section section--center">
+                <div class="panel panel--visit reveal">
+                    <span class="panel__index">04 — Visit</span>
+                    <h2 class="panel__title">Come as the sun sets</h2>
+                    <p class="panel__text">
+                        Open evenings, Tuesday through Sunday. Tickets include the moonlit
+                        gallery and the reflecting pool.
+                    </p>
+                    <div class="visit-grid" data-stagger>
+                        <div class="visit-item"><span>Hours</span><strong>Tue–Sun · 17:00–23:00</strong></div>
+                        <div class="visit-item"><span>Where</span><strong>The Marble Quarter</strong></div>
+                        <div class="visit-item"><span>Entry</span><strong>From $24 · Members free</strong></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ============ CONTENT ZONE (scrolls over faded stage) ============ -->
+        <div class="zone-content">
+            <!-- MASTERPIECES GALLERY -->
+            <section id="masterpieces" class="section-block">
+                <header class="block-head reveal">
+                    <span class="block-head__index">05 — The Gallery</span>
+                    <h2 class="block-head__title">Masterpieces of the collection</h2>
+                    <p class="block-head__text">
+                        Twenty-four halls of antiquity, from imperial portraiture to the
+                        sculpted divine. A selection of what awaits beyond the pool.
+                    </p>
+                </header>
+
+                <div class="gallery" data-stagger>
+                    <figure class="gallery__item gallery__item--tall">
+                        <img src="./images/women-one.jpg" alt="Portrait study" loading="lazy">
+                        <figcaption><span>Portrait of a Lady</span><em>Marble · 1st c.</em></figcaption>
+                    </figure>
+                    <figure class="gallery__item">
+                        <img src="./images/man-two.jpg" alt="Portrait study" loading="lazy">
+                        <figcaption><span>The Orator</span><em>Bronze · 2nd c.</em></figcaption>
+                    </figure>
+                    <figure class="gallery__item">
+                        <img src="./images/women-three.jpg" alt="Portrait study" loading="lazy">
+                        <figcaption><span>Priestess of Isis</span><em>Marble · 1st c.</em></figcaption>
+                    </figure>
+                    <figure class="gallery__item gallery__item--wide">
+                        <img src="./images/horse.jpg" alt="Equestrian relief" loading="lazy">
+                        <figcaption><span>Equestrian Relief</span><em>Stone · 3rd c.</em></figcaption>
+                    </figure>
+                    <figure class="gallery__item">
+                        <img src="./images/man-four.jpg" alt="Portrait study" loading="lazy">
+                        <figcaption><span>Young Athlete</span><em>Marble · 2nd c.</em></figcaption>
+                    </figure>
+                    <figure class="gallery__item gallery__item--tall">
+                        <img src="./images/women-five.jpg" alt="Portrait study" loading="lazy">
+                        <figcaption><span>Draped Muse</span><em>Marble · 1st c.</em></figcaption>
+                    </figure>
+                    <figure class="gallery__item">
+                        <img src="./images/man-five.jpg" alt="Portrait study" loading="lazy">
+                        <figcaption><span>The Philosopher</span><em>Bronze · 2nd c.</em></figcaption>
+                    </figure>
+                    <figure class="gallery__item">
+                        <img src="./images/women-four.jpg" alt="Portrait study" loading="lazy">
+                        <figcaption><span>Veiled Grace</span><em>Marble · 1st c.</em></figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <!-- MARQUEE -->
+            <div class="marquee" aria-hidden="true">
+                <div class="marquee__track">
+                    <span>Antiquity</span><span>◈</span><span>Marble</span><span>◈</span>
+                    <span>Myth</span><span>◈</span><span>Moonlight</span><span>◈</span>
+                    <span>Reflection</span><span>◈</span><span>Provenance</span><span>◈</span>
+                    <span>Antiquity</span><span>◈</span><span>Marble</span><span>◈</span>
+                    <span>Myth</span><span>◈</span><span>Moonlight</span><span>◈</span>
+                    <span>Reflection</span><span>◈</span><span>Provenance</span><span>◈</span>
+                </div>
+            </div>
+
+            <!-- AGES / TIMELINE -->
+            <section id="ages" class="section-block">
+                <header class="block-head reveal">
+                    <span class="block-head__index">06 — The Ages</span>
+                    <h2 class="block-head__title">Two thousand years, four wings</h2>
+                </header>
+                <ol class="timeline" data-stagger>
+                    <li class="timeline__item">
+                        <span class="timeline__era">Archaic</span>
+                        <span class="timeline__year">700 – 480 BC</span>
+                        <p>The dawn of monumental stone — rigid grace and the first divine smiles.</p>
+                    </li>
+                    <li class="timeline__item">
+                        <span class="timeline__era">Classical</span>
+                        <span class="timeline__year">480 – 323 BC</span>
+                        <p>Perfect proportion and contrapposto; the human form idealised in marble.</p>
+                    </li>
+                    <li class="timeline__item">
+                        <span class="timeline__era">Hellenistic</span>
+                        <span class="timeline__year">323 – 31 BC</span>
+                        <p>Drama and emotion — drapery in motion, gods rendered achingly human.</p>
+                    </li>
+                    <li class="timeline__item">
+                        <span class="timeline__era">Imperial</span>
+                        <span class="timeline__year">31 BC – 476 AD</span>
+                        <p>Rome's marble empire: portraiture, myth and the cult of the divine.</p>
+                    </li>
+                </ol>
+            </section>
+
+            <!-- VOICES / TESTIMONIALS -->
+            <section id="voices" class="section-block">
+                <header class="block-head reveal">
+                    <span class="block-head__index">07 — Voices</span>
+                    <h2 class="block-head__title">Whispered in the halls</h2>
+                </header>
+                <div class="voices" data-stagger>
+                    <blockquote class="voice">
+                        <p>“I have never seen sculpture breathe until I saw it lit by the moon
+                            over water. An hour here rearranges the soul.”</p>
+                        <footer><strong>Amelia Vance</strong><span>The Art Review</span></footer>
+                    </blockquote>
+                    <blockquote class="voice">
+                        <p>“The reflecting pool turns antiquity into a dream. Flora seems to
+                            step from myth into the present, and back again.”</p>
+                        <footer><strong>Julian Reyes</strong><span>Curators' Circle</span></footer>
+                    </blockquote>
+                    <blockquote class="voice">
+                        <p>“A masterclass in atmosphere. The city has nothing else like these
+                            after-dark encounters with the ancient world.”</p>
+                        <footer><strong>Noor Haddad</strong><span>Evening Chronicle</span></footer>
+                    </blockquote>
+                </div>
+            </section>
+
+            <!-- MEMBERSHIP / NEWSLETTER -->
+            <section id="membership" class="section-block section-block--cta">
+                <div class="cta-card reveal">
+                    <span class="block-head__index">08 — Membership</span>
+                    <h2 class="cta-card__title">Belong to the moonlit few</h2>
+                    <p class="cta-card__text">
+                        Unlimited evening entry, private nocturnes and first sight of new
+                        acquisitions. Join the circle — or simply follow the light.
+                    </p>
+                    <form class="subscribe" onsubmit="return false;">
+                        <input type="email" placeholder="your@email.com" aria-label="Email" required>
+                        <button type="submit" class="btn btn--gold">Subscribe →</button>
+                    </form>
+                    <div class="cta-card__row" data-stagger>
+                        <a href="#" class="btn btn--ghost btn--lg">Become a member</a>
+                        <a href="#visit" class="btn btn--ghost btn--lg">Reserve your evening</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FOOTER -->
+            <footer class="site-footer">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <span class="brand__mark">◈</span>
+                        <h3>Museum of Ancient Art</h3>
+                        <p>A moonlit sanctuary where marble, myth and reflection meet.</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Visit</h4>
+                        <a href="#visit">Hours &amp; tickets</a>
+                        <a href="#events">Exhibitions</a>
+                        <a href="#masterpieces">The gallery</a>
+                        <a href="#membership">Membership</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Museum</h4>
+                        <a href="#manifesto">Our story</a>
+                        <a href="#ages">The collection</a>
+                        <a href="#voices">Press</a>
+                        <a href="#">Contact</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Connect</h4>
+                        <a href="#">Instagram</a>
+                        <a href="#">Journal</a>
+                        <a href="#">Patrons</a>
+                        <a href="#">Careers</a>
+                    </div>
+                </div>
+                <div class="footer-base">
+                    <span>© 2026 Museum of Ancient Art</span>
+                    <span>The Marble Quarter · Open evenings</span>
+                    <span>Crafted in moonlight · Three.js</span>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>
